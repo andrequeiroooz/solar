@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | SolarTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-internal { height: 50vh; min-height: 350px; display: flex; align-items: center; justify-content: center; background: var(--color-navy); text-align: center; color: var(--color-white); padding: 0 5%; }
+        .hero-internal h1 { color: var(--color-white); font-size: 3rem; margin-bottom: 1rem; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+        .contact-info-box { background: var(--color-gray); padding: 3rem; border-radius: var(--border-radius); }
+        .map-container { background: #eee; border-radius: var(--border-radius); min-height: 300px; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); }
+        
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="scrolled">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="img/logo.jpeg" alt="SolarTech Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="sobre.html">Sobre a Empresa</a></li>
+                <li><a href="servicos.html">Soluções</a></li>
+                <li><a href="portfolio.html">Portfólio de Obras</a></li>
+                <li><a href="contato.html" style="color: var(--color-solar)">Contato</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+    </header>
+
+    <div class="hero-internal">
+        <div class="hero-content">
+            <h1>Fale Conosco</h1>
+        </div>
+    </div>
+
+    <section>
+        <div class="section-container contact-grid">
+            <div class="contact-info-box">
+                <h2 style="margin-bottom: 1.5rem;">Informações de Contato</h2>
+                <p style="margin-bottom: 1rem;"><strong>WhatsApp / Telefone:</strong><br> (11) 99999-9999</p>
+                <p style="margin-bottom: 1rem;"><strong>E-mail:</strong><br> comercial@solartech.com.br</p>
+                <p style="margin-bottom: 2rem;"><strong>Endereço:</strong><br> Av. da Engenharia, 1000 - Centro, São Paulo - SP</p>
+                
+                <a href="https://wa.me/5511999999999" class="btn-primary">Enviar WhatsApp Agora</a>
+            </div>
+            
+            <div>
+                <h2 style="margin-bottom: 1.5rem;">Onde Estamos</h2>
+                <!-- Placeholder iframe map -->
+                <div class="map-container">
+                    [Google Maps Iframe Placeholder]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <div class="footer-logo">
+                    <img src="img/logo.jpeg" alt="SolarTech Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-copy">&copy; 2026 SolarTech Engenharia.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

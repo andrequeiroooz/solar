@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Obras | SolarTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-internal { height: 60vh; min-height: 400px; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), url('https://images.unsplash.com/photo-1588612140407-7435f3dfd71c?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat; text-align: center; color: var(--color-white); padding: 0 5%; }
+        .hero-internal h1 { color: var(--color-white); font-size: 3rem; margin-bottom: 1rem; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .portfolio-item { background: var(--color-gray); border-radius: var(--border-radius); overflow: hidden; }
+        .portfolio-img { width: 100%; height: 250px; background-color: #ddd; object-fit: cover; }
+        .portfolio-info { padding: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="scrolled">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="img/logo.jpeg" alt="SolarTech Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="sobre.html">Sobre a Empresa</a></li>
+                <li><a href="servicos.html">Soluções</a></li>
+                <li><a href="portfolio.html" style="color: var(--color-solar)">Portfólio de Obras</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+    </header>
+
+    <div class="hero-internal">
+        <div class="hero-content">
+            <h1>Obras Entregues</h1>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Veja a qualidade das nossas instalações e o resultado na conta dos nossos clientes.</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="section-container">
+            <h2 class="section-title">Resultados Reais</h2>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop" class="portfolio-img" alt="Instalação Residencial">
+                    <div class="portfolio-info">
+                        <h3 style="margin-bottom: 0.5rem;">Residência Alto Padrão</h3>
+                        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">Conta: de R$ 1.200 para R$ 80</p>
+                        <p>Instalação de 12 módulos fotovoltaicos no telhado, finalizada em 2 dias úteis.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop" class="portfolio-img" alt="Instalação Comercial">
+                    <div class="portfolio-info">
+                        <h3 style="margin-bottom: 0.5rem;">Supermercado Local</h3>
+                        <p style="color: var(--color-text-muted); margin-bottom: 1rem;">Conta: de R$ 8.500 para R$ 600</p>
+                        <p>Usina de solo para suprir toda a demanda de refrigeração comercial do cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-container">
+            <div class="footer-cta">
+                <a href="https://wa.me/5511999999999?text=Quero%20simular%20minha%20economia" class="btn-primary">Quero Resultados Assim</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
