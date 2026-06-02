@@ -57,4 +57,81 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 4. Anime.js Scroll Animations
+    if (typeof anime !== 'undefined') {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    
+                    // Hero section animation
+                    if (target.classList.contains('hero-content')) {
+                        anime.timeline({ easing: 'spring(1, 80, 10, 0)' })
+                            .add({
+                                targets: target.querySelectorAll('h1, p, a, span'),
+                                translateY: [50, 0],
+                                opacity: [0, 1],
+                                delay: anime.stagger(150)
+                            });
+                    } 
+                    // Grid cards staggering
+                    else if (target.classList.contains('benefits-grid')) {
+                        anime({
+                            targets: target.querySelectorAll('.benefit-card'),
+                            translateY: [50, 0],
+                            opacity: [0, 1],
+                            easing: 'spring(1, 80, 10, 0)',
+                            delay: anime.stagger(150)
+                        });
+                    }
+                    // Side by side elements
+                    else if (target.classList.contains('pain-solution')) {
+                        anime({
+                            targets: Array.from(target.children),
+                            translateX: (el, i) => i === 0 ? [-50, 0] : [50, 0],
+                            opacity: [0, 1],
+                            easing: 'easeOutQuint',
+                            duration: 1000,
+                            delay: anime.stagger(200)
+                        });
+                    }
+                    // Generic fade up for titles and single blocks
+                    else {
+                        anime({
+                            targets: target,
+                            translateY: [40, 0],
+                            opacity: [0, 1],
+                            easing: 'easeOutQuint',
+                            duration: 1000
+                        });
+                    }
+                    
+                    observer.unobserve(target);
+                }
+            });
+        }, observerOptions);
+
+        // Define which elements will be animated on scroll
+        const animateElements = document.querySelectorAll('.hero-content, .pain-solution, .benefits-grid, .testimonial-content, .offer-faq, .section-title, .section-subtitle, .footer-cta');
+        
+        // Hide elements initially to avoid flickering before animation starts
+        animateElements.forEach(el => {
+            if (el.classList.contains('hero-content')) {
+                el.querySelectorAll('h1, p, a, span').forEach(child => child.style.opacity = '0');
+            } else if (el.classList.contains('benefits-grid')) {
+                el.querySelectorAll('.benefit-card').forEach(card => card.style.opacity = '0');
+            } else if (el.classList.contains('pain-solution')) {
+                Array.from(el.children).forEach(child => child.style.opacity = '0');
+            } else {
+                el.style.opacity = '0';
+            }
+            observer.observe(el);
+        });
+    }
 });
